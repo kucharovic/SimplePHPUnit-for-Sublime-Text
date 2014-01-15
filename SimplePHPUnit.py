@@ -30,9 +30,9 @@ class SimplePhpUnitCommand(sublime_plugin.WindowCommand):
 
     def run(self, *args, **kwargs):
         try:
-            # The first folder needs to be the Laravel Project
+            # Settings for Symfony2 Project
             self.PROJECT_PATH = self.window.folders()[0]
-            if os.path.isfile("%s" % os.path.join(self.PROJECT_PATH, 'phpunit.xml')) or os.path.isfile("%s" % os.path.join(self.PROJECT_PATH, 'phpunit.xml.dist')):
+            if os.path.isfile("%s" % os.path.join(self.PROJECT_PATH, 'app/phpunit.xml')) or os.path.isfile("%s" % os.path.join(self.PROJECT_PATH, 'app/phpunit.xml.dist')):
                 self.params = kwargs.get('params', False)
                 self.args = [self.phpunit_path, '--stderr']
                 if self.params is True:
