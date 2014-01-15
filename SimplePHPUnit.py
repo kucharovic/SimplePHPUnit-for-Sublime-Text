@@ -36,7 +36,7 @@ class SimplePhpUnitCommand(sublime_plugin.WindowCommand):
                 self.params = kwargs.get('params', False)
                 self.args = [self.phpunit_path, '--stderr']
                 if self.params is True:
-                    self.window.show_input_panel('Params:', '', self.on_params, None, None)
+                    self.window.show_input_panel('Params:', '-c app/', self.on_params, None, None)
                 else:
                     self.on_done()
             else:
